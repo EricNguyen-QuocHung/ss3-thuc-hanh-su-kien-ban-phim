@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="init()">
+    <img id="doraemon" src="doraemon.jpg" alt="Doraemon" style="position: absolute; left: 0; top: 0;" width= "100" height="200" />
+    <script>
+        function pressUp() {
+            document.getElementById("doraemon").style.top = parseInt(document.getElementById("doraemon").style.top) - 10 + "px";
+        }
+
+        function pressDown() {
+            document.getElementById("doraemon").style.top = parseInt(document.getElementById("doraemon").style.top) + 10 + "px";
+        }
+
+        function pressLeft() {
+            document.getElementById("doraemon").style.left = parseInt(document.getElementById("doraemon").style.left) - 10 + "px";
+        }
+
+        function pressRight() {
+            document.getElementById("doraemon").style.left = parseInt(document.getElementById("doraemon").style.left) + 10 + "px";
+        }
+
+        function keySelected(evt) {
+            switch (evt.keyCode) {
+                case 38:
+                    pressUp();
+                    break;
+                case 40:
+                    pressDown();
+                    break;
+                case 37:
+                    pressLeft();
+                    break;
+                case 39:
+                    pressRight();
+            }
+        }
+        
+        function init() {
+            window.addEventListener("keydown", keySelected);    // need to review
+        }
+
+    </script>
+</body>
+</html>
